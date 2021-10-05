@@ -39,7 +39,7 @@ class Weather extends Equatable {
 
   @override
   // TODO: implement props
-  List<Object?> get props => [
+  List<Object> get props => [
         weatherCondition,
         formattedCondition,
         mainTemp,
@@ -80,10 +80,10 @@ class Weather extends Equatable {
         weatherCondition: _mapStringToWeatherCondition(
             consolidatedWeather['weather_state_abbr']),
         formattedCondition: consolidatedWeather['weather_state_name'],
-        mainTemp: consolidatedWeather['min_temp'],
-        temp: consolidatedWeather['the_temp'],
-        maxTemp: consolidatedWeather['max_temp'],
-        locationId: consolidatedWeather['woeid'],
+        mainTemp: consolidatedWeather['min_temp'] as double,
+        temp: consolidatedWeather['the_temp'] as double,
+        maxTemp: consolidatedWeather['max_temp'] as double,
+        locationId: consolidatedWeather['woeid'] as int ,
         created: consolidatedWeather['created'],
         lastUpdated: DateTime.now(),
         location: jsonObject['title']);
